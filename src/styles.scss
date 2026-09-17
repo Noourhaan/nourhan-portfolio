@@ -1,0 +1,162 @@
+/* =========================================================================
+   Global design tokens + base styles.
+   Component-specific styling lives inside each component's .scss file.
+   ========================================================================= */
+
+:root {
+  /* Core palette */
+  --bg: #090c10;
+  --bg-alt: #0d1116;
+  --surface: #10151b;
+  --text: #edf2ef;
+  --muted: #8d979f;
+  --faint: #68717a;
+  --line: #20272e;
+  --line-strong: #2b343d;
+  --accent: #8ff0b1;
+  --accent-ink: #08100c;
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+
+  /* Layout */
+  --gutter: 8vw;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Offset anchored sections so the fixed navbar never covers headings. */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Visible keyboard focus everywhere. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---- Shared building blocks reused across sections ---- */
+
+.section {
+  padding: 120px var(--gutter);
+}
+
+.section-label {
+  font: 600 11px var(--font-heading);
+  letter-spacing: 0.18em;
+  color: var(--faint);
+  margin-bottom: 50px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tags span {
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-size: 11px;
+  color: #a0aab3;
+}
+
+.btn {
+  display: inline-flex;
+  gap: 18px;
+  align-items: center;
+  padding: 14px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn.ghost {
+  border-color: var(--line-strong);
+  color: var(--text);
+  background: transparent;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --gutter: 7vw;
+  }
+  .section {
+    padding: 85px var(--gutter);
+  }
+}

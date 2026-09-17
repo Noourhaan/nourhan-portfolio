@@ -1,0 +1,28 @@
+<section id="about" class="section about">
+  <p class="section-label">01 / ABOUT</p>
+  <div class="about-content">
+    <h2>Turning business ideas into <span>working products.</span></h2>
+    <div class="about-text">
+      <p>
+        I'm a Full-Stack Developer specialized in Laravel and Angular with 3+ years of
+        experience building web applications, business systems, e-commerce platforms and
+        real-estate solutions.
+      </p>
+      <p>
+        I work across the full development lifecycle — from understanding business
+        requirements and designing database structures to developing APIs, building
+        responsive frontends, integrating third-party services, deploying applications and
+        maintaining production systems.
+      </p>
+
+      <dl class="stats">
+        @for (stat of stats; track stat.label) {
+          <div>
+            <dt>{{ stat.value }}</dt>
+            <dd>{{ stat.label }}</dd>
+          </div>
+        }
+      </dl>
+    </div>
+  </div>
+</section>

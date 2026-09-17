@@ -1,0 +1,22 @@
+<section id="skills" class="section skills">
+  <p class="section-label">02 / TOOLKIT</p>
+  <div class="skills-head">
+    <h2>Tools I use to <span>build.</span></h2>
+    <p>A practical stack focused on clean architecture, reliable APIs and maintainable products.</p>
+  </div>
+
+  <div class="skill-grid">
+    @for (category of categories; track category.title) {
+      <article>
+        <div class="skill-icon" aria-hidden="true">{{ category.icon }}</div>
+        <h3>{{ category.title }}</h3>
+        <p>{{ category.description }}</p>
+        <div class="tags">
+          @for (tag of category.tags; track tag) {
+            <span>{{ tag }}</span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>

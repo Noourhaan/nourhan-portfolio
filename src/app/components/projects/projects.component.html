@@ -1,0 +1,19 @@
+<section id="projects" class="section projects">
+  <p class="section-label">03 / SELECTED WORK</p>
+  <div class="projects-head">
+    <h2>Featured <span>projects.</span></h2>
+    <p>Real-world systems across real estate, finance, commerce and healthcare.</p>
+  </div>
+
+  <div class="project-list">
+    @for (project of projects; track project.title) {
+      <app-project-card [project]="project" />
+    }
+  </div>
+
+  <p class="private-note">
+    <span aria-hidden="true">◉</span> Some production projects are private / client-owned.
+    Public repositories will contain original portfolio implementations rather than
+    proprietary source code.
+  </p>
+</section>

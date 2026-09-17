@@ -1,0 +1,21 @@
+<section id="experience" class="section experience">
+  <p class="section-label">04 / EXPERIENCE</p>
+  <div class="experience-wrap">
+    <div class="experience-title">
+      <h2>From <span>requirement</span><br />to production.</h2>
+    </div>
+
+    <ol class="timeline">
+      @for (item of items; track item.title) {
+        <li class="timeline-item">
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <small>{{ item.label }}</small>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<section id="approach" class="section approach">
+  <p class="section-label">05 / HOW I WORK</p>
+  <div class="approach-head">
+    <h2>From idea to <span>shipped feature.</span></h2>
+    <p>A repeatable process that lets me own features from requirements through deployment.</p>
+  </div>
+
+  <ol class="steps">
+    @for (step of steps; track step.number) {
+      <li class="step">
+        <span class="step-number">{{ step.number }}</span>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </li>
+    }
+  </ol>
+</section>

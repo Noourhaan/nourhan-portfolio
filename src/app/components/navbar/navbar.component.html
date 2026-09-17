@@ -1,0 +1,47 @@
+<header class="nav" [class.scrolled]="scrolled()" [class.open]="menuOpen()">
+  <a class="brand" href="#home" (click)="closeMenu()">
+    {{ logo }}<span>.</span>
+  </a>
+
+  <nav class="nav-links" aria-label="Primary">
+    @for (link of links; track link.id) {
+      <a
+        [href]="'#' + link.id"
+        [class.active]="activeId() === link.id"
+        [attr.aria-current]="activeId() === link.id ? 'true' : null"
+        (click)="closeMenu()"
+      >{{ link.label }}</a>
+    }
+  </nav>
+
+  <a class="nav-cta" [href]="contactHref" (click)="closeMenu()">
+    Let's Talk <span aria-hidden="true">↗</span>
+  </a>
+
+  <button
+    type="button"
+    class="hamburger"
+    [attr.aria-expanded]="menuOpen()"
+    aria-controls="mobile-menu"
+    aria-label="Toggle navigation menu"
+    (click)="toggleMenu()"
+  >
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile navigation drawer -->
+<div id="mobile-menu" class="mobile-menu" [class.open]="menuOpen()">
+  <nav aria-label="Mobile">
+    @for (link of links; track link.id) {
+      <a
+        [href]="'#' + link.id"
+        [class.active]="activeId() === link.id"
+        (click)="closeMenu()"
+      >{{ link.label }}</a>
+    }
+    <a class="mobile-cta" [href]="contactHref" (click)="closeMenu()">
+      Let's Talk <span aria-hidden="true">↗</span>
+    </a>
+  </nav>
+</div>

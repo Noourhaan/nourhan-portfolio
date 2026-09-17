@@ -1,0 +1,40 @@
+<section id="home" class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Available for opportunities</p>
+    <h1>Hi, I'm Nourhan<br /><em>Full-Stack Developer</em></h1>
+    <p class="lead">
+      I build scalable web applications and production-ready business solutions with
+      <strong>Laravel</strong> and <strong>Angular</strong>.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="#projects">View My Work <span aria-hidden="true">↓</span></a>
+      <a class="btn ghost" [href]="contactHref">Get In Touch <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <ul class="tech-line" aria-label="Core technologies">
+      @for (item of tech; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="hero-art" aria-hidden="true">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+
+    <div class="code-card">
+      <div class="window"><span></span><span></span><span></span></div>
+      <!-- Literal braces are written as HTML entities so Angular does not
+           parse them as ICU expressions (avoids NG5002). -->
+      <pre><code><b>const</b> developer = &#123;
+  name: <mark>'Nourhan'</mark>,
+  focus: [<mark>'Laravel'</mark>, <mark>'Angular'</mark>],
+  mindset: <mark>'build &amp; improve'</mark>
+&#125;;</code></pre>
+      <div class="card-status"><span class="check">✓</span> shipping production code</div>
+    </div>
+  </div>
+</section>
