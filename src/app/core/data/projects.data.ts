@@ -35,15 +35,17 @@ export const PROJECTS: Project[] = [
       { value: '2,000+', label: 'Commits across two repositories' },
       { value: '190+', label: 'Merged backend pull requests' },
     ],
+    image: 'assets/easy-deal.png',
+    live: 'https://www.easydealmasr.com/home',
     private: true,
     note: 'Production project — selected implementation details shown for portfolio purposes.',
   },
   {
     index: '02',
     title: 'E-Invoice & VAT Management System',
-    category: 'Business / Financial System',
+    category: 'Business / Financial System · ZATCA e-Invoicing',
     description:
-      'A full-stack business application for invoice management, VAT calculations, financial data processing and reporting.',
+      'A full-stack business application for invoice management, VAT calculations, financial data processing and reporting, aligned with ZATCA e-invoicing requirements.',
     role:
       'Full-Stack Developer responsible for backend APIs, business logic, database queries, VAT calculations, reporting and Angular integration.',
     stack: ['Laravel', 'Angular', 'MySQL', 'REST APIs'],
@@ -59,13 +61,15 @@ export const PROJECTS: Project[] = [
       'Angular reporting dashboards',
       'Laravel REST APIs',
     ],
+    image: 'assets/e-invoice.png',
+    live: 'https://ai-brainpower.com/einvoicing',
   },
   {
     index: '03',
-    title: 'E-Commerce / Marketplace Platform',
-    category: 'E-Commerce',
+    title: 'Olumira',
+    category: 'E-Commerce · Beauty & Cosmetics',
     description:
-      'A full-stack e-commerce / marketplace platform developed from business requirements through production deployment.',
+      'A full-stack beauty and cosmetics e-commerce platform developed from business requirements through production deployment.',
     role: 'Full-Stack Developer',
     stack: ['Laravel', 'Angular', 'MySQL', 'REST APIs'],
     features: [
@@ -81,6 +85,8 @@ export const PROJECTS: Project[] = [
       'Troubleshooting',
       'Ongoing improvements',
     ],
+    image: 'assets/olumira.png',
+    live: 'https://www.olumira.com/home',
   },
   {
     index: '04',

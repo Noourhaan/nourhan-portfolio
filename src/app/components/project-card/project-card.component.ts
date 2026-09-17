@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { Project } from '../../core/models/project.model';
 
 @Component({
@@ -9,4 +9,7 @@ import { Project } from '../../core/models/project.model';
 })
 export class ProjectCardComponent {
   @Input({ required: true }) project!: Project;
+
+  /** Falls back to the placeholder if a screenshot fails to load. */
+  readonly imgFailed = signal(false);
 }

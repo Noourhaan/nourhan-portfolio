@@ -16,8 +16,13 @@
   <!-- RIGHT: preview + details -->
   <div class="project-body">
     <div class="project-preview">
-      @if (project.image) {
-        <img [src]="project.image" [alt]="project.title + ' screenshot'" loading="lazy" />
+      @if (project.image && !imgFailed()) {
+        <img
+          [src]="project.image"
+          [alt]="project.title + ' screenshot'"
+          loading="lazy"
+          (error)="imgFailed.set(true)"
+        />
       } @else {
         <div class="preview-placeholder" aria-hidden="true">
           <span>{{ project.title }}</span>
